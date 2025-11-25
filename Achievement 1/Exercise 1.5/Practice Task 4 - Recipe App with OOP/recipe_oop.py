@@ -20,13 +20,17 @@ class Recipe:
         return self.cooking_time
 
     def set_cooking_time(self, time):
+        # Safeguard cooking time input
+        if not isinstance(time, (int, float)) or time < 0:
+            raise ValueError("Cooking time must be a positive number.")
         self.cooking_time = time
         self.calculate_difficulty()
 
     # --- Add ingredients ---
     def add_ingredients(self, *args):
         for ingredient in args:
-            self.ingredients.append(ingredient)
+            # Normalize ingredients to lowercase
+            self.ingredients.append(ingredient.lower())
         self.update_all_ingredients()
         self.calculate_difficulty()
 
@@ -52,7 +56,8 @@ class Recipe:
 
     # --- Ingredient search ---
     def search_ingredient(self, ingredient):
-        return ingredient in self.ingredients
+        # Normalize search term to lowercase
+        return ingredient.lower() in self.ingredients
 
     # --- Update class variable ---
     def update_all_ingredients(self):
@@ -66,13 +71,17 @@ class Recipe:
                 f"Ingredients: {', '.join(self.ingredients)}\n"
                 f"Cooking Time: {self.cooking_time} minutes\n"
                 f"Difficulty: {self.get_difficulty()}\n")
-    
-def recipe_search(data, search_term):
-    print(f"\nSearching for recipes with ingredient: {search_term}")
-    for recipe in data:
-        if recipe.search_ingredient(search_term):
-            print(recipe)
 
+    # --- Static method for recipe search ---
+    @staticmethod
+    def recipe_search(data, search_term):
+        print(f"\nSearching for recipes with ingredient: {search_term}")
+        for recipe in data:
+            if recipe.search_ingredient(search_term):
+                print(recipe)
+
+
+# --- Script Execution ---
 if __name__ == "__main__":
     print("=== Step 1: Create Tea Recipe Object ===")
     tea = Recipe("Tea")
@@ -101,14 +110,12 @@ if __name__ == "__main__":
     recipes_list = [tea, coffee, cake, smoothie]
 
     print("=== Step 5: Search Recipes with Ingredient 'Water' ===")
-    recipe_search(recipes_list, "Water")
+    Recipe.recipe_search(recipes_list, "Water")
 
     print("=== Step 6: Search Recipes with Ingredient 'Sugar' ===")
-    recipe_search(recipes_list, "Sugar")
+    Recipe.recipe_search(recipes_list, "Sugar")
 
     print("=== Step 7: Search Recipes with Ingredient 'Bananas' ===")
-    recipe_search(recipes_list, "Bananas")
+    Recipe.recipe_search(recipes_list, "Bananas")
 
-# === Steps 6–7: Search for recipes containing specific ingredients ===
-for ingredient in ["Water", "Sugar", "Bananas"]:
-    recipe_search(recipes_list, ingredient)
+
