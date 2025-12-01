@@ -37,7 +37,9 @@ The tasks covered **reading, filtering, updating, deleting entries**, and finall
 - Code using filter() with like("%Sugar%").
 - Output showing Tea, Coffee, Cake, Banana Smoothie.
 
-🛠️ Task 3: Updating Entries
+---
+
+## 🛠️ Task 3: Updating Entries
 
 - Retrieved Cake recipe using get() or filter().one().
 - Appended Chocolate Powder to its ingredients:
@@ -51,7 +53,9 @@ The tasks covered **reading, filtering, updating, deleting entries**, and finall
 - Code editing Cake’s ingredients.
 - Output showing updated ingredient list.
 
-🛠️ Task 4: Deleting Entries
+---
+
+## 🛠️ Task 4: Deleting Entries
 
 - Added a temporary recipe Buttered Toast.
 - Retrieved it with:
@@ -68,31 +72,35 @@ The tasks covered **reading, filtering, updating, deleting entries**, and finall
 - Deleting Buttered Toast.
 - Output showing remaining recipes.
 
-🛠️ Final Task: Recipe App
+---
+
+## 🛠️ Final Task: Recipe App
+
 Built a complete command-line Recipe app (recipe_app.py) with full CRUD functionality.
 Features
 
 - Create a new recipe
-  Collects name, ingredients, cooking time.
-  Validates inputs.
-  Calculates difficulty automatically.
-  Saves to database.
+  - Collects name, ingredients, cooking time.
+  - Validates inputs.
+  - Calculates difficulty automatically.
+  - Saves to database.
 - View all recipes
-  Retrieves all recipes.
-  Displays formatted details using **str**.
-  Search by ingredients
-  Lists all unique ingredients.
-  Allows user to select one or more.
-  Filters recipes using like() conditions.
+  - Retrieves all recipes.
+  - Displays formatted details using **str**.
+  - Search by ingredients
+  - Lists all unique ingredients.
+  - Allows user to select one or more.
+  - Filters recipes using like() conditions.
 - Edit a recipe
-  User selects recipe by ID.
-  Can edit name, ingredients, or cooking time.
-  Difficulty recalculated automatically.
+  - User selects recipe by ID.
+  - Can edit name, ingredients, or cooking time.
+  - Difficulty recalculated automatically.
 - Delete a recipe
-  User selects recipe by ID.
-  Confirms deletion before committing.
+  - User selects recipe by ID.
+  - Confirms deletion before committing.
 - Quit application
-  Closes session and engine gracefully.
+
+  - Closes session and engine gracefully.
 
   Menu Loop
   --- Recipe App Menu ---
@@ -127,7 +135,8 @@ Exercise 1.7/
 │ └── README.md
 └── README.md # This summary file
 
-📝 Reflection
+## 📝 Reflection
+
 This exercise demonstrated:
 
 - How SQLAlchemy ORM simplifies database operations compared to raw SQL.
