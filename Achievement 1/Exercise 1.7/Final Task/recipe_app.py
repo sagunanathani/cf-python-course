@@ -1,17 +1,27 @@
-
+    
 # -------------------------------
 # Imports
 # -------------------------------
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker
+from dotenv import load_dotenv
+import os
+
+#  virtual environment: cf-python-base
+# -------------------------------
+# Load environment variables
+# -------------------------------
+# this will read from .env file
+load_dotenv(override=True)  # ensures .env values replace system ones
+
+USERNAME = os.getenv("USERNAME") # MySQL username
+PASSWORD = os.getenv("PASSWORD") # MySQL password
+HOST = os.getenv("HOST")         # usually localhost
+DB_NAME = os.getenv("DB_NAME") # database created earlier
 
 # -------------------------------
 # Database Connection
 # -------------------------------
-USERNAME = "cf-python"       # MySQL username
-PASSWORD = "password"        # MySQL password
-HOST = "localhost"           # usually localhost
-DB_NAME = "task_database"    # database created earlier
 
 engine = create_engine(f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}/{DB_NAME}")
 Session = sessionmaker(bind=engine)
@@ -59,7 +69,7 @@ class Recipe(Base):
     def return_ingredients_as_list(self):
         if not self.ingredients:
             return []
-        return [i.strip().lower() for i in self.ingredients.split(", ")]
+        return [i.strip().lower() for i in self.ingredients.split(",")]
 
     def set_cooking_time(self, time):
         if not isinstance(time, (int, float)) or time < 0:
@@ -281,3 +291,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
