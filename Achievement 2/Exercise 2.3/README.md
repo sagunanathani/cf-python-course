@@ -44,6 +44,7 @@ The project demonstrates:
    cd django-recipe-app
 
 3. Create and activate a virtual environment: a2-ve-recipeapp
+   "C:/Users/Saguna Nathani/Envs/a2-ve-recipeapp/Scripts/Activate.ps1"
    python -m venv venv
    source venv/bin/activate # Mac/Linux
    venv\Scripts\activate # Windows
