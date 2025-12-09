@@ -1,0 +1,21 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/welcome.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="welcome">
+    <div class="overlay">
+      <h2>Welcome to Our Recipes Home</h2>
+      <p>
+        Discover, create, and share your favorite recipes with ease and joy!
+      </p>
+      <a href="{% url 'recipes:overview' %}" class="btn">View All Recipes</a>
+    </div>
+  </div>
+{% endblock %}

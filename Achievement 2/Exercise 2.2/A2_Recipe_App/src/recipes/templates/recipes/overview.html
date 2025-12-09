@@ -1,0 +1,26 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Recipes Overview{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/overview.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h2 class="overview-title">Recipes Overview</h2>
+  <div class="grid">
+    {% for recipe in recipes %}
+    <div class="card">
+      <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+      <div class="card-content">
+        <h3>{{ recipe.title }}</h3>
+        <p>By: {{ recipe.author_name }}</p>
+        <p>Prep: {{ recipe.prep_time }} mins | Cook: {{ recipe.cook_time }} mins</p>
+        <a href="{% url 'recipes:detail' recipe.pk %}" class="btn">View Details</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

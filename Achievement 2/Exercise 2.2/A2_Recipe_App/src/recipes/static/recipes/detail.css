@@ -1,0 +1,105 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding-top: 50px;
+}
+
+/* Header */
+header {
+  background: #ff7043;   /* ✅ orange navbar */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h2 {
+  margin-top: 0;
+  color: #ff7043;        /* ✅ orange heading */
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Decorative underline like overview */
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff7043;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Meta info */
+.meta {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.meta span {
+  margin-right: 15px;
+}
+
+/* Recipe image */
+img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Section headings */
+h3 {
+  margin-top: 20px;
+  color: #ff7043;        /* ✅ orange section headings */
+}
+
+/* Ingredients list */
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #444;
+}
+
+/* Instructions */
+p.instructions {
+  white-space: pre-line;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Back button styled like overview buttons */
+a.back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: #ff7043;   /* ✅ orange button */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a.back:hover {
+  background: #e64a19;   /* darker orange hover */
+  transform: scale(1.05);
+}

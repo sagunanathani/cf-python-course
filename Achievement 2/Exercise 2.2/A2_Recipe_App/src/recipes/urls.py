@@ -4,5 +4,7 @@ from . import views
 app_name = 'recipes'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    # path('', views.welcome, name='welcome'),
+    path('overview/', views.recipe_list, name='overview'),
+    path('detail/<int:pk>/', views.recipe_detail, name='detail'),
 ]

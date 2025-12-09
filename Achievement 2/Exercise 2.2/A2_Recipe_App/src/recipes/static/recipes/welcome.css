@@ -1,0 +1,44 @@
+/* Full-page background image */
+.welcome {
+  background: url("/static/images/bg-food.jpg") no-repeat center center fixed;
+  background-size: cover;        /* ensures image covers full screen */
+  width: 100%;                  /* full viewport width */
+  min-height: calc(100vh - 50px); /* subtract header height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Semi-transparent overlay for readability */
+.overlay {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 600px;
+}
+
+.overlay h2 {
+  color: #ff7043;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.overlay p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.overlay .btn {
+  font-size: 1em;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+/* Footer pinned at bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

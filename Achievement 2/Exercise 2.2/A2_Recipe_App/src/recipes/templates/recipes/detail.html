@@ -1,0 +1,35 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/detail.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="detail">
+    <h2>{{ recipe.title }}</h2>
+    <p class="meta">
+      <span><b>By:</b> {{ recipe.author_name }}</span> |
+      <span>Prep: {{ recipe.prep_time }} mins</span> |
+      <span>Cook: {{ recipe.cook_time }} mins</span> |
+      <span><b>Difficulty:</b> {{ recipe.difficulty }}</span>
+    </p>
+
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="detail-img">
+
+    <h3>Ingredients</h3>
+    <ul>
+      {% for line in recipe.ingredients.splitlines %}
+      <li>{{ line }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3>Instructions</h3>
+    <p class="instructions">{{ recipe.instructions }}</p>
+
+    <a href="{% url 'recipes:overview' %}" class="btn">← Back to Overview</a>
+  </div>
+{% endblock %}
