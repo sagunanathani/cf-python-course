@@ -7,7 +7,7 @@ This document records the steps and decisions made while completing **Exercise 2
 ## 1. Model Updates
 
 ### Models from Exercise 2.3
-- **Recipe**
+- **Recipe**git add Achievement\ 2/Exercise\ 2.5
   - `title` (CharField, max_length=100)
   - `author_name` (CharField, max_length=50)
   - `description` (TextField)
