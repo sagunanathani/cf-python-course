@@ -7,6 +7,7 @@ This document records the steps and decisions made while completing **Exercise 2
 ## 1. Model Updates
 
 ### Models from Exercise 2.3
+
 - **Recipe**git add Achievement\ 2/Exercise\ 2.5
   - `title` (CharField, max_length=100)
   - `author_name` (CharField, max_length=50)
@@ -20,9 +21,10 @@ This document records the steps and decisions made while completing **Exercise 2
   - `image` (ImageField, upload to `static/images/`)
 
 ### Changes Made
-- ✅ **No structural changes** were required compared to Exercise 2.3.  
-- The `difficulty` attribute is retained but recalculated dynamically in the detail view (based on prep + cook time and number of ingredients, as practiced in Achievement 1).  
-- Added `description` field to improve recipe overview cards.  
+
+- ✅ **No structural changes** were required compared to Exercise 2.3.
+- The `difficulty` attribute is retained but recalculated dynamically in the detail view (based on prep + cook time and number of ingredients, as practiced in Achievement 1).
+- Added `description` field to improve recipe overview cards.
 - All other attributes remain unchanged.
 
 ---
@@ -38,9 +40,9 @@ Images for each recipe were downloaded and stored locally in `static/images/`.
 ## 3. Welcome Page
 
 - Designed a **hero section** with a full‑screen background image (`bg-food.jpg`).
-- Added overlay text: *“Welcome to Our Recipes Home”* with a button linking to the overview page.
+- Added overlay text: _“Welcome to Our Recipes Home”_ with a button linking to the overview page.
 - Footer fixed at the bottom of the page.
-- Inspiration sources documented in `journal.doc` under *Frontend Inspirations*.
+- Inspiration sources documented in `journal.doc` under _Frontend Inspirations_.
 
 📸 Screenshot saved as: `welcome.jpg`
 
@@ -63,8 +65,9 @@ Images for each recipe were downloaded and stored locally in `static/images/`.
 - Styled with consistent orange theme (matching overview page).
 - Includes a “Back to Overview” button.
 
-📸 Screenshots saved as:  
-- `recipe1.jpg` 
+📸 Screenshots saved as:
+
+- `recipe1.jpg`
 
 ---
 
@@ -76,18 +79,21 @@ Images for each recipe were downloaded and stored locally in `static/images/`.
   - Difficulty calculation logic matches Achievement 1.
 - All tests passed successfully.
 
-📸 Screenshots saved as:  
-- `test_pass_recipes.jpg` 
+📸 Screenshots saved as:
+
+- `test_pass_recipes.jpg`
+
 ---
 
 ## 7. GitHub Deliverables
 
 - **Achievement‑2 Repository**
+
   - `Exercise-2.5/Task-2.5.md`
-  - `Exercise-2.5/Screenshots/`  
-    - `welcome.jpg`  
-    - `recipes-overview.jpg`  
-    - `recipe1.jpg`  
+  - `Exercise-2.5/Screenshots/`
+    - `welcome.jpg`
+    - `recipes-overview.jpg`
+    - `recipe1.jpg`
     - `test_pass_recipes.jpg` etc...
 
 - **Recipe App Repository**
@@ -97,9 +103,9 @@ Images for each recipe were downloaded and stored locally in `static/images/`.
 
 ## 💬 Reflection
 
-- Learned how to connect models, admin entries, and templates into a cohesive app.  
-- Practiced modular CSS and consistent theming across pages.  
-- Improved confidence in designing professional layouts with Django template inheritance.  
+- Learned how to connect models, admin entries, and templates into a cohesive app.
+- Practiced modular CSS and consistent theming across pages.
+- Improved confidence in designing professional layouts with Django template inheritance.
 - Reinforced workflow discipline by documenting changes and organizing deliverables in GitHub.
 
 ---

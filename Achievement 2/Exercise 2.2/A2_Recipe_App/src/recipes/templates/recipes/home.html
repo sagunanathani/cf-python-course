@@ -1,0 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Recipe App</title>
+</head>
+<body>
+    <h1>Welcome to our Recipe App</h1>
+    <a href="{% url 'login' %}">Login</a>
+    <img src="{% static 'recipes/images/welcome.jpg' %}" alt="Welcome" width="600">
+</body>
+</html>

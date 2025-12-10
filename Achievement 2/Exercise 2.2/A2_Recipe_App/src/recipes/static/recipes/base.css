@@ -1,11 +1,13 @@
 /* Global Reset */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
-  background: #fdfdfd;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header fixed at top */
+/* Fixed Header */
 header {
   background: #ff7043;
   color: white;
@@ -18,14 +20,14 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  height: 70px;             /* ✅ fixed height for header */
+  height: 70px;
   box-sizing: border-box;
 }
 
 header h1 {
   margin: 0;
   font-size: 1.6em;
-  line-height: 1;           /* keeps text centered vertically */
+  line-height: 1;
 }
 
 nav {
@@ -38,7 +40,7 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 14px;       /* ✅ more padding so text isn’t cut */
+  padding: 10px 14px;
   display: inline-block;
 }
 
@@ -47,19 +49,24 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* Push content down so it doesn’t overlap header */
+/* Main Content Container */
 .container {
-  margin-top: 90px;         /* matches header height */
+  flex: 1;
+  margin-top: 70px; /* offset for fixed header */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 /* Footer */
 footer {
+  background-color: #eee;
   text-align: center;
   padding: 20px;
-  background: #eee;
-  color: #555;
   font-size: 0.9em;
+  color: #555;
+  margin-top: auto;
 }
 
 /* Buttons */

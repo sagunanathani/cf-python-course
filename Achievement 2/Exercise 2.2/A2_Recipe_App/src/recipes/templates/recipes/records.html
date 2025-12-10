@@ -1,0 +1,29 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Recipe Records{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/records.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h2>Recipe Records</h2>
+  <p>This is a protected page. Only logged-in users can see it.</p>
+
+  <ul>
+  {% for record in records %}
+    <li>
+      <a href="{% url 'recipes:record_detail' record.pk %}">
+        {{ record.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+  <div class="actions">
+    <a href="{% url 'recipes:overview' %}" class="btn">← Back to Overview</a>
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+  </div>
+{% endblock %}

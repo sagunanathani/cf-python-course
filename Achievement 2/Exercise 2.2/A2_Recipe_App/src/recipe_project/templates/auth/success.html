@@ -1,0 +1,18 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/success.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="logout-container">
+    <h2>You’ve successfully logged out!</h2>
+    <p>Thanks for using the Recipe App. Come back soon to explore more recipes!</p>
+    <a href="{% url 'login' %}" class="btn">Log back in</a>
+    <a href="{% url 'recipes:overview' %}" class="btn secondary">Browse Recipes</a>
+  </div>
+{% endblock %}
