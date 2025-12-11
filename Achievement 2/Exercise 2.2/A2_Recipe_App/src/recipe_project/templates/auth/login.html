@@ -9,6 +9,11 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
+  <script>
+    window.location.href = "{% url 'recipes:overview' %}";
+  </script>
+{% endif %}
   <div class="login-container">
     <h2>Login to Recipe App</h2>
     {% if error_message %}

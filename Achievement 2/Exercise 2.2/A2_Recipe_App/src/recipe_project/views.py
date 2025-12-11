@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
+    # If user is already logged in, redirect them away from login page
+    if request.user.is_authenticated:
+        return redirect('recipes:overview')
+
     error_message = None
     form = AuthenticationForm()
 
@@ -21,6 +26,10 @@ def login_view(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'auth/login.html', context)
 
+@login_required
 def logout_view(request):
     logout(request)
+    return redirect('logout-success')   # redirect to success page
+
+def logout_success(request):
     return render(request, 'auth/success.html')

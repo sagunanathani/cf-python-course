@@ -43,9 +43,11 @@ body {
 
 /* Error message */
 .error {
-  color: red;
+  color: #e64a19;
+  font-weight: bold;
   margin-bottom: 10px;
 }
+
 
 /* Button */
 .btn {
