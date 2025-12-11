@@ -14,7 +14,7 @@ def recipe_detail(request, pk): # detail
     return render(request, 'recipes/detail.html', {'recipe': recipe})
 
 @login_required
-def records(request): # protected
-    recipes = Recipe.objects.all()
-    return render(request, 'recipes/records.html', {'recipes': recipes})
+def records(request):  # protected
+    records = Recipe.objects.all()
+    return render(request, 'recipes/records.html', {'records': records})
 
