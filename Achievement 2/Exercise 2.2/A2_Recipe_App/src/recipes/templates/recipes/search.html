@@ -1,0 +1,92 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}Search Recipes{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/search.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>🔍 Search Your Perfect Recipes</h2>
+
+<div class="search-box">
+  <form method="get" class="search-form">
+    <div class="form-group">
+      <label for="id_query">🔍 Recipe Name:</label>
+      {{ form.query }}
+    </div>
+
+    <div class="form-group">
+      <label for="id_ingredients">🧄 Ingredients:</label>
+      <input type="text" name="ingredients" placeholder="e.g., Milk, Tomatoes, Garlic, Sugar">
+    </div>
+
+    <div class="form-group">
+      <label for="id_max_time">⏱ Max Cooking Time (minutes):</label>
+      <input type="number" name="max_time" placeholder="Maximum minutes">
+    </div>
+
+    <div class="form-group checkbox-group">
+  <label for="id_show_all">
+    <input type="checkbox" id="id_show_all" name="show_all">
+    <span class="checkbox-label">📋 Show all recipes</span>
+  </label>
+    </div>
+
+    <button type="submit" class="btn search-btn">Search & Analyze</button>
+  </form>
+</div>
+
+{% if results %}
+  <h2 class="chart-title">🔍 Search Results</h2>
+  <div class="results-grid">
+    {% for recipe in results %}
+      <div class="recipe-card">
+        {% if recipe.image %}
+          <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe-img">
+        {% endif %}
+        <div class="recipe-content">
+          <h3>{{ recipe.title }}</h3>
+          <p class="description">{{ recipe.description|truncatewords:20 }}</p>
+          <p class="meta">
+            <strong>Cooking Time:</strong> {{ recipe.cook_time }} min<br>
+            <strong>Serves:</strong> {{ recipe.serves }}
+          </p>
+          <a href="{% url detail_url_name recipe.pk %}" class="btn">View Recipe</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+   {% if charts.bar or charts.pie or charts.line %}
+  <h2 class="chart-title">📊 Data Visualization</h2>
+  <div class="chart-stack">
+    {% if charts.bar %}
+      <h5 class="chart-heading">Servings by Recipe</h5>
+      <div class="chart-box">
+        <h4>Servings by Recipe</h4>
+        <img src="data:image/png;base64,{{ charts.bar }}" alt="Bar chart">
+      </div>
+    {% endif %}
+    {% if charts.pie %}
+      <h5 class="chart-heading">Cook Time Distribution</h5>
+      <div class="chart-box">
+        <h4>Cook Time Distribution</h4>
+        <img src="data:image/png;base64,{{ charts.pie }}" alt="Pie chart">
+      </div>
+    {% endif %}
+    {% if charts.line %}
+      <h5 class="chart-heading">Prep Time by Recipe</h5>
+      <div class="chart-box">
+        <h4>Prep Time by Recipe</h4>
+        <img src="data:image/png;base64,{{ charts.line }}" alt="Line chart">
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% endif %}
+{% endblock %}
+
