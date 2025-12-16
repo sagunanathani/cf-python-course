@@ -19,7 +19,7 @@ h2 {
 .container {
   max-width: 1000px;
   margin: 30px auto;
-  padding: 0 20px;
+  padding: 20px 20px;
 }
 
 .grid {

@@ -37,36 +37,42 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
+  padding: 8px 12px;
   font-weight: bold;
-  padding: 10px 14px;
-  display: inline-block;
+  position: relative;
 }
 
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;                  /* start at center */
+  bottom: -4px;               /* just below the text */
+  width: 0;
+  height: 2px;
+  background: #fff;           /* underline color */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;                /* expand fully */
+  left: 0;                    /* shift to align with text */
+}
+
+nav a.active::after {
+  width: 100%;                /* underline stays visible */
+  left: 0;
 }
 
 /* Main Content Container */
 .container {
   flex: 1;
-  margin-top: 70px; /* offset for fixed header */
+  /*margin-top: 70px; /* offset for fixed header */
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* Footer */
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #555;
-  margin-top: auto;
 }
 
 /* Buttons */
@@ -84,3 +90,23 @@ footer {
 .btn:hover {
   background: #e64a19;
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #f1f1f1;
+  color: #555;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #ff7043; /* orange theme */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #e64a19;
+}
+

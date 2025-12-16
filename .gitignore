@@ -1,5 +1,12 @@
+
+# Python cache files
 *.pyc
 __pycache__/
+
 db.sqlite3
 *.log
+
+# Environment variables
 .env
+.env.local
+.env.*.local

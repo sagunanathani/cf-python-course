@@ -1,0 +1,122 @@
+.container {
+  flex: 1;
+  margin-top: 70px;  /* Styled section title */
+}
+
+/* Styled section title */
+.about-title {
+  text-align: center;
+  font-size: 2.3em;
+  color: #ff7043;              /* orange theme */
+  margin-top: 2px;
+  position: relative;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Decorative underline */
+.about-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff7043;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.about-card {
+  max-width: 700px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #ff7043; /* orange border */
+}
+
+.about-card h2 {
+  color: #ff7043;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  color: #555;
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.about-links {
+  list-style: none;
+  padding: 0;
+}
+
+.about-links li {
+  margin: 10px 0;
+}
+
+.about-links a {
+  color: #ff7043;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.about-links a:hover {
+  color: #e64a19;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 130px;
+  border-radius: 50%;       /* circular photo */
+  object-fit: cover;        /* crop nicely */
+  margin-bottom: 20px;
+  border: 3px solid #ff7043; /* orange border */
+}
+
+.intro {
+  font-size: 1.3em;        /* slightly larger */
+  font-weight: bold;       /* bold for emphasis */
+  color: #ff7043;          /* orange accent */
+  margin-bottom: 15px;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #ff7043; /* orange line */
+  width: 60%;                    /* shorter than full width */
+  margin: 15px auto;              /* centered with spacing */
+}
+
+.about-links-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 10px 0;
+}
+
+.about-links-row a {
+  color: #ff7043;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.about-links-row a:hover {
+  color: #e64a19;
+}
+
+.about-links-row i {
+  margin-right: 8px;   /* space between icon and text */
+}

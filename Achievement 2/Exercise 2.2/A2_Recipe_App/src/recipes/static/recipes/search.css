@@ -1,5 +1,29 @@
+.container {
+  margin-top: 70px;  /* Styled section title */
+}
+
+.search-title {
+  text-align: center;
+  font-size: 2.0em;
+  color: #ff7043;              /* orange theme */
+  margin-bottom: 30px;
+  position: relative;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Decorative underline */
+.search-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff7043;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
 .search-box {
-  background: url('/static/recipes/food-bg.jpg') no-repeat center center;
   background-size: cover;
   padding: 30px;
   border-radius: 12px;

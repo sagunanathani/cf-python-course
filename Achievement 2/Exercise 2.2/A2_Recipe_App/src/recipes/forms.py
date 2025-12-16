@@ -1,4 +1,5 @@
 from django import forms
+from .models import Recipe
 
 class RecipeSearchForm(forms.Form):
     query = forms.CharField(
@@ -10,3 +11,8 @@ class RecipeSearchForm(forms.Form):
         label="Show all recipes",
         required=False
     )
+
+class RecipeForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ['title', 'description', 'ingredients', 'instructions', 'image']

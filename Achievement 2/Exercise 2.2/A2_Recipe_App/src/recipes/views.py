@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Recipe
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.forms import UserCreationForm
+from .forms import RecipeForm
+from .models import Recipe
 from django.urls import reverse
 from .forms import RecipeSearchForm
 import pandas as pd
@@ -11,7 +13,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 def home(request):
-    return render(request, 'recipes/welcome.html')
+    return render(request, 'recipes/welcome.html') # root → welcome page
 
 def recipe_list(request):   # overview
     recipes = Recipe.objects.all()
@@ -21,10 +23,36 @@ def recipe_detail(request, pk): # detail
     recipe = get_object_or_404(Recipe, pk=pk)
     return render(request, 'recipes/detail.html', {'recipe': recipe})
 
+def about_me(request):
+    return render(request, 'recipes/about_me.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # redirect to login after successful registration
+    else:
+        form = UserCreationForm()
+    return render(request, 'auth/register.html', {'form': form})
+
 @login_required
 def records(request):  # protected
     records = Recipe.objects.all()
     return render(request, 'recipes/records.html', {'records': records})
+
+@login_required
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user  # link recipe to logged-in user
+            recipe.save()
+            return redirect('recipes:overview')
+    else:
+        form = RecipeForm()
+    return render(request, 'recipes/add_recipe.html', {'form': form})
 
 @login_required
 def search(request):

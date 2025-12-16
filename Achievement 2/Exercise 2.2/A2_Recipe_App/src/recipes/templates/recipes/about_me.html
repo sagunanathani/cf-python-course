@@ -1,0 +1,45 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block title %}About Me{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+<link rel="stylesheet" href="{% static 'recipes/about_me.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<h2 class="about-title">About Me</h2>
+
+<div class="about-card">
+  <img src="{% static 'images/Saguna_Nathani_Photo.jpg' %}" alt="Profile Photo" class="profile-pic">
+  <h2>Saguna Nathani</h2>
+  <p class="intro">Hi, I’m Saguna Nathani — an aspiring Fullstack/Frontend Developer.</p>
+  <hr class="divider">
+<p>
+  Passionate about building modern, responsive web apps with Django, React, Angular, React Native, 
+  and a strong focus on testing and code quality.
+</p>
+
+<div class="about-links-row">
+  <a href="https://github.com/sagunanathani" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://sagunanathani.github.io/portfolio-website/" target="_blank">
+    <i class="fas fa-briefcase"></i> Portfolio
+  </a>
+</div>
+
+<div class="about-links-row">
+  <a href="mailto:sagunanathani@gmail.com">
+    <i class="fas fa-envelope"></i> Email Me
+  </a>
+  <a href="https://www.linkedin.com/in/saguna-nathani-23bba515b/" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+</div>
+
+<hr class="divider">
+</div>
+{% endblock %}

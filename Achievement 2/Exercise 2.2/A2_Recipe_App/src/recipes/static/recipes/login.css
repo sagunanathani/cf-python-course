@@ -9,7 +9,7 @@ body {
 /* Semi-transparent overlay box */
 .login-container {
   max-width: 400px;
-  margin: 100px auto;
+  margin: 140px auto;
   background: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 10px;
@@ -37,7 +37,7 @@ body {
   width: 100%;
   padding: 10px;
   margin: 12px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ff7043;
   border-radius: 6px;
 }
 

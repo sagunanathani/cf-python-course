@@ -11,4 +11,5 @@ urlpatterns = [
     path('records/', views.records, name='records'),                # records overview
     path('records/<int:pk>/', views.recipe_detail, name='record_detail'),  # detail for records
     path('search/', views.search, name='search'),
+    path('add/', views.add_recipe, name='add'), # add recipes
 ]
