@@ -39,6 +39,18 @@
 
 ---
 
+# Exercise 2.8 – Deployment Choice
+
+I deployed my Django Recipe App on Render instead of Heroku.
+
+**Reasons:**
+- Render provides free static file hosting and integrates easily with Django + WhiteNoise.
+- It automatically runs `collectstatic` during deployment, which simplifies setup.
+- Persistent storage and environment variable management are straightforward.
+- Render’s workflow matches modern deployment practices and is more reliable than Heroku’s free tier (which was discontinued).
+
+Therefore, I used Render to host my project and completed all deployment tasks there.
+
 ## 📝 Reflection
 
 ### ✅ What went well
