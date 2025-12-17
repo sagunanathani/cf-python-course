@@ -15,19 +15,43 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
-    <!-- Row 1: Title + Description -->
+    <!-- Row 1: Title + Author -->
     <div class="form-row">
       <div class="form-group">
         <label for="id_title">Title</label>
         {{ form.title }}
       </div>
       <div class="form-group">
+        <label for="id_author_name">Author Name</label>
+        {{ form.author_name }}
+      </div>
+    </div>
+
+    <!-- Row 2: Description -->
+    <div class="form-row">
+      <div class="form-group full-width">
         <label for="id_description">Description</label>
         {{ form.description }}
       </div>
     </div>
 
-    <!-- Row 2: Ingredients + Instructions -->
+    <!-- Row 3: Prep Time + Cook Time + Serves -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="id_prep_time">Prep Time (mins)</label>
+        {{ form.prep_time }}
+      </div>
+      <div class="form-group">
+        <label for="id_cook_time">Cook Time (mins)</label>
+        {{ form.cook_time }}
+      </div>
+      <div class="form-group">
+        <label for="id_serves">Serves</label>
+        {{ form.serves }}
+      </div>
+    </div>
+
+    <!-- Row 4: Ingredients + Instructions -->
     <div class="form-row">
       <div class="form-group">
         <label for="id_ingredients">Ingredients</label>
@@ -39,7 +63,7 @@
       </div>
     </div>
 
-    <!-- Row 3: Image Upload -->
+    <!-- Row 5: Image Upload -->
     <div class="form-row">
       <div class="form-group full-width">
         <label for="id_image">Image</label>
@@ -47,7 +71,7 @@
       </div>
     </div>
 
-    <!-- Row 4: Buttons -->
+    <!-- Row 6: Buttons -->
     <div class="form-actions">
       <button type="submit" class="btn">Save Recipe</button>
       <a href="{% url 'recipes:overview' %}" class="btn btn-secondary">Back to Recipes</a>
@@ -55,6 +79,3 @@
   </form>
 </div>
 {% endblock %}
-
-
-

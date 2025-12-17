@@ -13,6 +13,11 @@ header {
   text-align: center;
 }
 
+.container {
+  flex: 1;
+  margin-top: 25px;  /* Styled section title */
+}
+
 /* Title */
 h2 {
   margin-top: 0;

@@ -15,4 +15,14 @@ class RecipeSearchForm(forms.Form):
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'ingredients', 'instructions', 'image']
+        fields = [
+            "title",
+            "author_name",
+            "description",
+            "prep_time",
+            "cook_time",
+            "serves",
+            "ingredients",
+            "instructions",
+            "image",
+        ]

@@ -1,6 +1,6 @@
 /* Background with recipe image */
 body {
-  background: url("/static/images/recipe-bg.png") no-repeat center center fixed;
+  background: url("/static/images/login-bg.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;

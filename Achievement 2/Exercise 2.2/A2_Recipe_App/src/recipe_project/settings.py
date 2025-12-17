@@ -27,7 +27,8 @@ load_dotenv()
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # for production
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = "False"
 
 ALLOWED_HOSTS = ["django-recipe-app-6t2d.onrender.com", "localhost", "127.0.0.1"]
 
@@ -66,6 +67,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -125,7 +127,8 @@ LOGIN_URL = '/login/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
-   BASE_DIR / 'recipes' / 'static',
+    BASE_DIR / "media",  # site images
+    BASE_DIR / "recipes" / "media", # recipe images
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
