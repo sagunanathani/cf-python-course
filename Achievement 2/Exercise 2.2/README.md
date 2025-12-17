@@ -3,7 +3,7 @@
 A comprehensive Django-based web application for managing and discovering recipes.  
 Users can browse, search, add, and analyze recipes with an intuitive interface and powerful filtering capabilities.
 
-🌐 Live Demo: [Recipe App on ]()
+🌐 Live Demo: [Recipe App on render](https://django-recipe-app-6t2d.onrender.com)
 
 ---
 
